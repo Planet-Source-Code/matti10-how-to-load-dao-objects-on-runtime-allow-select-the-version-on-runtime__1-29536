@@ -1,0 +1,46 @@
+Big news for DAO/Acc97 database app users: Capacity to select the DAO version on runtime! 
+
+The coal why to develop this is solve a potential DAO 3.5X App break when a new install of Office 2000/2002 removes the registry entries of older DAO's. This is the number one end user tech support issue in DAO 3.5x referenced applications, 
+even if they are carefully made! The problem might rise again more when people are installing Office 2002 after your app was there.
+
+This is my new invention how to load a "installed" version of DAO in runtime. Also this shows how to use DAO as runtime created object! Tested this in VB5.0 And VB 6.0, the Net beta won't support this kind using of these objects so it's not directly available there!
+
+This is currently saved as VB5 project.
+The priority is to load 3.5x but exe will load and use 3.6 if it can't found the older DAO runtime.
+
+Need to use Acc97 databases as it will work on both driver versions.
+Also the project must support DAO 3.5X syntax, if it do need DAO 3.6 syntax for specific reason then you are in trouble whit this!
+
+There are two sample methods included, how to use a protected and a total unprotected database!
+Did think twice should i keep this advance my self or publish it, as i released that a DAO app which stands on preinstalled drivers can be utilized from browser component too! And might give too much power for programmers, but it's now here! 
+
+
+Note! Very important reading and instructions:
+
+There are no DAO Object library references now! And if you use datacontrol remove the reference, it will automatically but one there!
+Also design of runtime objects are more difficult to make easier you can use reference in VB IDE but remember remove it when making exe.
+If you leave the reference for exe prog, then if the correct engine it not there it will give automation error! Don't screw here!
+
+Setup/PD-wizard won't work correctly so need to add database files there. Don't screw up here!
+If you don't have the existing file list when your project had the reference then just make an other setup for datacontrol / or referenced project and look for the files appear there!
+If you use MDAC_typ & DCOM patch for drivers etc. or other methods, then do that same.
+
+The second database included is protected whit Access 97 workgrop file (System.mdw) 
+This system.mdw is for this demonstration only! As long as the system.mdw stays in correct path it will let this program open that database!
+The accounts are Admin pwl "admin" MattiA pwl "masaA" it's permanently locked, the Admin user has his ownership privileges, removed the User group put the privileges are there in case you want to view this database direct from Access (That's why it won't need to point the system.mdw for it), the creator's personal pin's are not available, that's why not to use this copy of system.mdw in your own projects. If you need a system.mdw file use your copy of Access to make one, also my Acc is a locale version, so the defaults are set for my system.
+
+Why this protection database in included is only that i found this matter very difficult to explain to others who don't have Access and does not use workgroups system of it. There are more info available in Access help files about this workgroup!
+The reason is that this new method here limits the possibilities to get that system.mdw data in as the program load's, so to use this whit this solve need to have a demo sample of this method too!
+This is common protection method an if the solve do not have it, it's useless to utilize in most published programs.   
+I have not tried to use the option register the system.mdw. As this is an option if only one non ODBC Access app is running on the system and if a user have Access this should left for it only.
+
+Also if you have code to compact database and keep it as Acc 97 use declared version Constant dbVersion30 = 32 (&H20)
+
+Every file is checked for infections whit F-secure Antivirus 30th Nov databases
+
+Author: Matti Blom, Systems Analyst, Helsinki Finland
+
+Email: matti10@surfeu.fi
+
+
+
